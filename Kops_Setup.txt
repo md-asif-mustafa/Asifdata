@@ -1,0 +1,24 @@
+kops create cluster \
+  --state=s3://aprofile-kops-state \
+  --name=my-cluster.k8s.local \
+  --zones=us-east-1a,us-east-1b \
+  --node-count=2 \
+  --node-size=t3.small \
+  --control-plane-size=t3.medium \
+  --dns private \
+  --node-volume-size=8 \
+  --control-plane-volume-size=8
+
+
+kops update cluster --name my-cluster.k8s.local --state=s3://aprofile-kops-state --yes --admin
+
+kops validate cluster --name my-cluster.k8s.local --state=s3://aprofile-kops-state --yes
+
+ubuntu@ip-172-31-16-135:~$ kops delete cluster --name=my-cluster.k8s.local --state=s3://aprofile-kops-state --yes
+
+
+aws ec2 create-volume --availability-zone=us-east-1a --size=3 --volume-type=gp2
+
+vol-029cec21b8e6ab2c6
+
+ubuntu@ip-172-31-16-135:~$ kubectl describe node i-073dbbef6c19e369d | grep us-east-1
