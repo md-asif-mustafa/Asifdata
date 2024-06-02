@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 sudo -i
 apt update && apt intall awscli -y
