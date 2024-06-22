@@ -22,3 +22,7 @@ aws ec2 create-volume --availability-zone=us-east-1a --size=3 --volume-type=gp2
 vol-029cec21b8e6ab2c6
 
 ubuntu@ip-172-31-16-135:~$ kubectl describe node i-073dbbef6c19e369d | grep us-east-1
+
+
+kubectl get nodes --show-labels
+kubectl get pods -o wide
