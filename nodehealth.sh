@@ -9,8 +9,11 @@
 # Version: v1
 #######################
 
+echo "Print the disk space"
 df -h
 
+echo "Print the memory"
 free -g
 
+echo "Print the cpu"
 nproc
