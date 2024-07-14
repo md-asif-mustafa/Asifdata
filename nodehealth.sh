@@ -7,7 +7,7 @@
 # This script output the node health
 
 # Version: v1
-#######################
+########################
 
 set -x # debug mode
 
