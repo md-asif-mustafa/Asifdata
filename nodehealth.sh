@@ -10,7 +10,7 @@
 ########################
 
 set -x # debug mode
-#set -e # exit the script when there is error
+set -e # exit the script when there is error
 set -o pipefail
 
 jgjkjg
