@@ -11,9 +11,9 @@
 
 set -x # debug mode
 set -e # exit the script when there is error
-set -o pipefail
+#set -o pipefail
 
-jgjkjg
+jgjkjg | echo 
 
 df -h
 
