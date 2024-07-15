@@ -7,13 +7,12 @@
 # This script output the node health
 
 # Version: v1
-########################
+#########################
 
 set -x # debug mode
 set -e # exit the script when there is error
 set -o pipefail
 
-jgjkjg | echo 
 
 df -h
 
