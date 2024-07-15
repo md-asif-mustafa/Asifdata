@@ -10,9 +10,15 @@
 ########################
 
 set -x # debug mode
+#set -e # exit the script when there is error
+set -o pipefail
+
+jgjkjg
 
 df -h
 
 free -g
 
 nproc
+
+ps -ef | grep amazon | awk -F" " '{print $2}'
