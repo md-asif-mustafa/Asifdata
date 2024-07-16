@@ -1,0 +1,30 @@
+kops create cluster \
+  --name=mprofile.k8s.local \
+  --state=s3://asprofile-kops-state \
+  --zones=us-east-1a,us-east-1b,us-east-1c \
+  --node-count=3 \
+  --node-size=t3.small \
+  --master-size=t3.medium \
+  --node-volume-size=8 \
+  --master-volume-size=8
+  
+kops update cluster --name=mprofile.k8s.local --state=s3://asprofile-kops-state --yes --admin
+kops validate cluster --state=s3://asprofile-kops-state
+kops delete cluster --name=mprofile.k8s.local --state=s3://asprofile-kops-state --yes
+
+
+kops create cluster \
+  --name=mprofile.k8s.local \
+  --state=s3://asprofile-kops-state \
+  --zones=us-east-1b,us-east-1d \
+  --node-count=2 \
+  --node-size=t2.micro \
+  --master-size=t3.medium \
+  --node-volume-size=8 \
+  --master-volume-size=8
+
+
+
+# helm
+ubuntu@ip-172-31-85-126:~/cicd-kube-docker/helm$ helm create aprofilecharts
+
